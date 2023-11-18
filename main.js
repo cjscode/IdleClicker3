@@ -177,18 +177,31 @@ function setupPrices () {
 }
 setupPrices()
 document.querySelector("#next").addEventListener("click",function () {
-    if (data.mps >= game.cursor_price[data.current_cursor+1]) {
-        data.money = 0
-        data.shop_amount = []
-        updData()
-        data.current_cursor++
+    if (1 == 1) {//data.mps >= game.cursor_price[data.current_cursor+1]) {
+        let x = confirm("Are you sure that you would like to move to the next cursor?")
+        if (!(x)) {
+            return
+        }
+        let g = document.querySelector("#flashbang")
+        g.style.scale = 1
+        g.style.opacity = 1
+        setTimeout(function () {
+            data.money = 0
+            data.shop_amount = []
+            updData()
+            data.current_cursor += 1
+            g.style.opacity = 0
+            upd()
+            setTimeout(function () {
+                g.style.scale = 0
+            }, 3000)
+        }, 3000)
     }
 })
 function setupCPrices () {
     for (let i = 1; i < game.cursor_mult.length; i++) {
         game.cursor_price[i] = game.cursor_price[i-1]*game.cursor_mult[i-1]*(game.shop[(i+1)*3-1] ? 1+game.shop[(i+1)*3-1].amount : 2)
     }
-    console.log(game.cursor_price)
 }
 setupCPrices()
 let ll = Date.now()
