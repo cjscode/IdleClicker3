@@ -1,6 +1,6 @@
 let data = {
     money: 0,
-    shop_amount: [50,50,50,50,50,0],
+    shop_amount: [0,0,0,0,0,0],
     current_cursor: 0
 }
 let game = {
@@ -55,7 +55,8 @@ let game = {
     mps: 0,
     cps: 1,
     fps: 60,
-    mpc: 0
+    mpc: 0,
+    cursor_price: [75]
 }
 function updData () {
     if (data.shop_amount.length < game.shop.length) {
@@ -175,6 +176,21 @@ function setupPrices () {
     }
 }
 setupPrices()
+document.querySelector("#next").addEventListener("click",function () {
+    if (data.mps >= game.cursor_price[data.current_cursor+1]) {
+        data.money = 0
+        data.shop_amount = []
+        updData()
+        data.current_cursor++
+    }
+})
+function setupCPrices () {
+    for (let i = 1; i < game.cursor_mult.length; i++) {
+        game.cursor_price[i] = game.cursor_price[i-1]*game.cursor_mult[i-1]*(game.shop[(i+1)*3-1] ? 1+game.shop[(i+1)*3-1].amount : 2)
+    }
+    console.log(game.cursor_price)
+}
+setupCPrices()
 let ll = Date.now()
 let tl = ll
 function upd () {
