@@ -345,6 +345,15 @@ function setupUpgrades () {
     } 
 }
 setupUpgrades()
+let loaded = setInterval(function () {
+    if (document.readyState == "complete") {
+        document.querySelector("#loading").style.opacity = "0"
+        clearInterval(loaded)
+        setTimeout(function () {
+            document.querySelector("#loading").remove()
+        },1000)
+    }
+},50)
 let ll = Date.now()
 let tl = ll
 function upd () {
