@@ -50,6 +50,49 @@ let game = {
             base_price: 1
         },
         //sec 3
+        {
+            name:"Drag Click",
+            desc_start:"Drag Click with your fingers better. ",
+            amount: 0.35,
+            type: "speed",
+            base_price: 1
+        },
+        {
+            name:"Golden Touch",
+            desc_start:"Makes your clicks much more valuable with the Golden Touch. ",
+            amount: 0.35,
+            type: "money",
+            base_price: 1
+        },
+        {
+            name:"AutoClicker T1",
+            desc_start:"Upgrade AutoClickerT1 to click faster than ever before. ",
+            amount: 0.35,
+            type: "speed",
+            base_price: 1
+        },
+        //sec 4
+        {
+            name:"Thumb Clicking",
+            desc_start:"Allows you to click with your Thumb better. ",
+            amount: 0.50,
+            type: "money",
+            base_price: 1
+        },
+        {
+            name:"Friend Richie",
+            desc_start:"Bring in your friend Richie to click. His clicks are very rich. ",
+            amount: 0.50,
+            type: "money",
+            base_price: 1
+        },
+        {
+            name:"AutoClicker T2",
+            desc_start:"Upgrade AutoClickerT2 to click faster than ever before. ",
+            amount: 0.50,
+            type: "speed",
+            base_price: 1
+        },
     ],
     cursor_mult: [1],
     mps: 0,
@@ -115,7 +158,7 @@ function setupDesc () {
 }
 setupDesc()
 function getCurrentPrice (n) {
-    return game.shop[n].base_price*Math.pow(1+(game.shop[n].amount*1.15),data.shop_amount[n])
+    return game.shop[n].base_price*Math.pow(1+(game.shop[n].amount*1.15),data.shop_amount[n])*game.cursor_mult[Math.floor(n/3)]
 }
 function shopBuy (n) {
     if (data.shop_amount[n] > 49 || false) {//data.money < getCurrentPrice(n)) {
@@ -174,7 +217,7 @@ function updStats () {
 }
 function setupPrices () {
     for (let i = 1; i < game.shop.length; i++) {
-        game.shop[i].base_price = game.shop[i-1].base_price*(1+(game.shop[i-1].amount*60))*game.cursor_mult[Math.floor(i/3)]
+        game.shop[i].base_price = game.shop[i-1].base_price*(1+(game.shop[i-1].amount*60))
     }
 }
 setupPrices()

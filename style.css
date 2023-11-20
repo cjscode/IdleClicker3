@@ -110,6 +110,7 @@ html, body, head {
     border-top-left-radius: 5vmin;
     border-bottom-left-radius: 5vmin;
     background-color: rgb(37, 120, 168);
+    box-shadow: 0 0 5px rgb(37, 120, 168);
 }
 #flashbang {
     position: absolute;

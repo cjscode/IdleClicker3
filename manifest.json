@@ -1,0 +1,12 @@
+{
+    "author": "cjscode",
+    "description": "Play Idle Clicker 3 by cjscode. No Ads. Play free online.",
+    "homepage_url": "https://ic3.vercel.app",
+    "name": "Idle Clicker 3",
+    "short_name": "IC3",
+    "manifest_version": 2,
+    "version": "1.0.0",
+    "background": {
+        "scripts": ["main.js"]
+    }
+}
