@@ -331,6 +331,20 @@ function setupCPrices () {
     }
 }
 setupCPrices()
+function setupUpgrades () {
+    for (let i = 0; i < game.upgrades.length; i++) {
+        let u = document.createElement("div")
+        u.innerHTML = `
+        <img src="assets/handMain.png">
+        <div id="dropdown>
+            <h1>${game.upgrades[i].name}</h1>
+            <p>${game.upgrades[i].desc}</h1>
+        </div>
+        `
+        document.querySelector("#upgrades").appendChild(u)
+    } 
+}
+setupUpgrades()
 let ll = Date.now()
 let tl = ll
 function upd () {

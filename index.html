@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--meta tags and stuff-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,36 @@
     <meta name="keywords" content="idle clicker, idleclicker, idleclicker3, free games no ads, free games online, unblocked games, cjscode, clicker, idle, fun game, online game">
     <meta name="author" content="cjscode">
     <title>Idle Clicker 3 - Loading...</title>
+    <!--css-->
     <link rel="stylesheet" href="style.css">
+    <!--manifest-->
     <link rel="manifest" href="manifest.json">
+    <!--preload images-->
+    <link rel="preload" href="assets/handMain.png" as="image">
+    <link rel="preload" href="assets/handSteel.png" as="image">
+    <link rel="preload" href="assets/handGlitch.png" as="image">
+    <link rel="preload" href="assets/handGold.png" as="image">
+    <link rel="preload" href="assets/handJade.png" as="image">
+    <link rel="preload" href="assets/handNot.png" as="image">
+    <link rel="preload" href="assets/handRuby.png" as="image">
+    <link rel="preload" href="assets/handSmol.png" as="image">
+    <link rel="preload" href="assets/handSun.png" as="image">
+    <link rel="preload" href="assets/handVoid.png" as="image">
+    <link rel="preload" href="assets/shop0.png" as="image">
+    <link rel="preload" href="assets/shop1.png" as="image">
+    <link rel="preload" href="assets/shop2.png" as="image">
+    <link rel="preload" href="assets/shop3.png" as="image">
+    <link rel="preload" href="assets/shop4.png" as="image">
+    <link rel="preload" href="assets/shop5.png" as="image">
+    <link rel="preload" href="assets/shop6.png" as="image">
+    <link rel="preload" href="assets/shop7.png" as="image">
+    <link rel="preload" href="assets/shop8.png" as="image">
+    <link rel="preload" href="assets/shop9.png" as="image">
+    <link rel="preload" href="assets/shop10.png" as="image">
+    <link rel="preload" href="assets/shop11.png" as="image">
 </head>
 <body>
+    <!--main game div-->
     <div id="main">
         <p id="money">$Loading...</p>
         <img src="assets/handMain.png" id="cursor">
@@ -22,16 +49,20 @@
             <h1 id="cps">cps: $Loading...</h1>
         </div>
     </div>
+    <!--shop div-->
     <div id="shop">
-        <div id="upgrades">upgradesdiv</div>
+        <div id="upgrades"></div>
         <div class="shopitem">
             <p><b>Seperate shop items comound. Ex: 500% + 300% = 1900%.</b></p>
         </div>
     </div>
+    <!--next cursor flashbang-->
     <div id="flashbang"></div>
+    <!--noscript alert-->
     <noscript>
         <div style="width: 100%; height: 100%; position: absolute; background-color: black; z-index: 999; color: white; text-align: center;"><b>Please enable your Javascript or upgrade your browser to continue. </b><br>ERR: NOJS</div>
     </noscript>
+    <!--js-->
     <script src="main.js"></script>
 </body>
 </html>

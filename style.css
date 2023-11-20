@@ -33,6 +33,9 @@ html, body, head {
     margin-left: 1vw;
     box-shadow: 0 0 5px rgb(84, 178, 232);
     border-radius: 5px;
+    height: 10vmin;
+    padding: 0;
+    overflow: hidden;
 }
 #cursor {
     width: 60%;
@@ -120,4 +123,19 @@ html, body, head {
     opacity: 0;
     background-color: white;
     scale: 0;
+}
+#upgrades > div {
+    height: 8vmin;
+    padding: 0.5vmin;
+    margin: 0.5vmin;
+    width: 8vmin;
+    position: relative;
+    float: left;
+    background-color: rgb(37, 120, 168);
+    border-radius: 2vmin;
+}
+#upgrades > div > img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
