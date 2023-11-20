@@ -56,7 +56,9 @@ let game = {
     cps: 1,
     fps: 60,
     mpc: 0,
-    cursor_price: [75]
+    cursor_price: [75],
+    cursor_display: ["Basic","Steel","Ruby","Jade","Glitch","Void","Smol","Sun","Not a "],
+    cursor_id: ["Main","Steel","Ruby","Jade","Glitch","Void","Smol","Sun","Not"]
 }
 function updData () {
     if (data.shop_amount.length < game.shop.length) {
@@ -208,6 +210,7 @@ let ll = Date.now()
 let tl = ll
 function upd () {
     updStats()
+    document.querySelector("#cursor").src = `assets/hand${game.cursor_id[data.current_cursor]}.png`
     document.querySelector("#cursor").style.translate = `-50% ${-50+Math.sin(Date.now()/750)*10}%`
     document.querySelector("#money").textContent = `$${short(data.money)}`
     document.title = `Idle Clicker 3 - $${short(data.money)}`
