@@ -101,7 +101,89 @@ let game = {
     mpc: 0,
     cursor_price: [75],
     cursor_display: ["Basic","Steel","Ruby","Jade","Glitch","Void","Smol","Sun","Not a "],
-    cursor_id: ["Main","Steel","Ruby","Jade","Glitch","Void","Smol","Sun","Not"]
+    cursor_id: ["Main","Steel","Ruby","Jade","Glitch","Void","Smol","Sun","Not"],
+    upgrades: [
+        {
+            name: "Clickbait",
+            type: "money",
+            amount: 0,
+            price: 1,
+            desc: "Its Clickbait.",
+            req: "none"
+        },
+        {
+            name: "Clickbait 2.0",
+            type: "money",
+            amount: 0,
+            price: 10,
+            desc: "Its Clickbait.",
+            req: 0
+        },
+        {
+            name: "Clickbait 3.0",
+            type: "money",
+            amount: 0,
+            price: 100,
+            desc: "Its Clickbait.",
+            req: 1
+        },
+        {
+            name: "Clickbait 4.0",
+            type: "money",
+            amount: 0,
+            price: 1000,
+            desc: "Its Clickbait.",
+            req: 2
+        },
+        {
+            name: "Clickbait 5.0",
+            type: "money",
+            amount: 0,
+            price: 10000,
+            desc: "Its Clickbait.",
+            req: 3
+        },
+        {
+            name: "Clickbait 6.0",
+            type: "money",
+            amount: 0,
+            price: 100000,
+            desc: "Its Clickbait.",
+            req: 4
+        },
+        {
+            name: "Clickbait 7.0",
+            type: "money",
+            amount: 0,
+            price: 1000000,
+            desc: "Its Clickbait.",
+            req: 5
+        },
+        {
+            name: "Clickbait 8.0",
+            type: "money",
+            amount: 0,
+            price: 10000000,
+            desc: "Its Clickbait.",
+            req: 6
+        },
+        {
+            name: "Clickbait 9.0",
+            type: "money",
+            amount: 0,
+            price: 100000000,
+            desc: "Its Clickbait.",
+            req: 7
+        },
+        {
+            name: "Clickbait 10.0",
+            type: "money",
+            amount: 0,
+            price: 1000000000,
+            desc: "Its the FINAL Clickbait.",
+            req: 7
+        }
+    ]
 }
 function updData () {
     if (data.shop_amount.length < game.shop.length) {
@@ -161,10 +243,10 @@ function getCurrentPrice (n) {
     return game.shop[n].base_price*Math.pow(1+(game.shop[n].amount*1.15),data.shop_amount[n])*game.cursor_mult[Math.floor(n/3)]
 }
 function shopBuy (n) {
-    if (data.shop_amount[n] > 49 || false) {//data.money < getCurrentPrice(n)) {
+    if (data.shop_amount[n] > 49 || data.money < getCurrentPrice(n)) {
         return
     }
-    data.money -= 0//getCurrentPrice(n)
+    data.money -= getCurrentPrice(n)
     data.shop_amount[n] += 1
 }
 function createShp () {
