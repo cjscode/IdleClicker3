@@ -1,7 +1,8 @@
 let data = {
     money: 0,
     shop_amount: [0,0,0,0,0,0],
-    current_cursor: 0
+    current_cursor: 0,
+    rebirths: 0
 }
 let game = {
     shop: [
@@ -304,7 +305,7 @@ function setupPrices () {
 }
 setupPrices()
 document.querySelector("#next").addEventListener("click",function () {
-    if (1 == 1) {//data.mps >= game.cursor_price[data.current_cursor+1]) {
+    if (data.mps >= game.cursor_price[data.current_cursor+1]) {
         let x = confirm("Are you sure that you would like to move to the next cursor?")
         if (!(x)) {
             return
@@ -317,6 +318,29 @@ document.querySelector("#next").addEventListener("click",function () {
             data.shop_amount = []
             updData()
             data.current_cursor += 1
+            g.style.opacity = 0
+            upd()
+            setTimeout(function () {
+                g.style.scale = 0
+            }, 3000)
+        }, 3000)
+    }
+})
+document.querySelector("#rebirth").addEventListener("click",function () {
+    if (true) { 
+        let x = confirm("Are you sure that you would like to Rebirth? This will completely reset your game, but give you a large boost.")
+        if (!(x)) {
+            return
+        }
+        let g = document.querySelector("#flashbang")
+        g.style.scale = 1
+        g.style.opacity = 1
+        setTimeout(function () {
+            data.money = 0
+            data.shop_amount = []
+            data.current_cursor = 0
+            updData()
+            data.rebirths += 1
             g.style.opacity = 0
             upd()
             setTimeout(function () {
@@ -364,7 +388,7 @@ function upd () {
     document.title = `Idle Clicker 3 - $${short(data.money)}`
     document.querySelector("#mps").textContent = `mps: $${short(game.mps)}`
     document.querySelector("#cps").textContent = `cps: ${short(game.cps)}`
-    document.querySelector("#mpc").textContent = `mpc: ${short(game.mpc)}`
+    document.querySelector("#mpc").textContent = `mpc: $${short(game.mpc)}`
     data.money += game.mps/game.fps
     updShop()
     tl = Date.now()

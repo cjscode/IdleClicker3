@@ -139,3 +139,21 @@ html, body, head {
     width: 100%;
     object-fit: contain;
 }
+#next > img, #rebirth > img {
+    width: calc(100% - 4vmin);
+    height: calc(100% - 4vmin);
+    margin: 2vmin;
+    object-fit: contain;
+}
+#rebirth {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    translate: 0 -50%;
+    width: 7.5vmin;
+    height: 35vmin;
+    border-top-right-radius: 5vmin;
+    border-bottom-right-radius: 5vmin;
+    background-color: rgb(37, 120, 168);
+    box-shadow: 0 0 5px rgb(37, 120, 168);
+}
