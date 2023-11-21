@@ -1,3 +1,5 @@
+//i give up
+location.reload()
 let data = {
     money: 0,
     shop_amount: [0,0,0,0,0,0],
@@ -236,7 +238,7 @@ function short (n) {
     return (Math.floor(n/Math.pow(10, numm-2))/100)+abbr[(numm/3)-1]
 }
 function cursorClick () {
-    data.money += game.mpc
+    data.money += game.mpc*game.cursor_mult[data.current_cursor]
 }
 document.querySelector("#cursor").addEventListener("click",function () {
     cursorClick()
