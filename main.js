@@ -4,6 +4,19 @@ let data = {
     current_cursor: 0,
     rebirths: 0
 }
+function loadData () {
+    let l_data = localStorage.getItem("gameData")
+    if (l_data == null) {
+        return
+    }
+    data = JSON.parse(l_data)
+}
+loadData()
+function saveData () {
+    let s_data = JSON.stringify(data)
+    localStorage.setItem("gameData",s_data)
+}
+setInterval(saveData, 1000)
 let game = {
     shop: [
         //sec 1
